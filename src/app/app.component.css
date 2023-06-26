@@ -1,3 +1,7 @@
+
 .sidebarPadre{
     height: 150vh;
+}
+.cuerpo{
+    background-image: url("/src/assets/imagenes/masterchief.jpg");
 }

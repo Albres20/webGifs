@@ -9,7 +9,9 @@ import { Gif } from '../../interfaces/gif.interfaces';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor(private gifsServices:GifsService) { }
+  constructor(private gifsServices:GifsService) { 
+    this.gifsServices.gifList;
+  }
 
   get gifs(): Gif[]{
     return this.gifsServices.gifList;

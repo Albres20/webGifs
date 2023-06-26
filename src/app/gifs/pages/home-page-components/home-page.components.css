@@ -1,3 +1,10 @@
 .cuerpo{
-    width: 100%;
+    width: 99.9%;
+    background-image: url("https://media.news9live.com/h-upload/2022/07/08/459405-poc-gif.gif"); 
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-left:0.5px;   
+    margin-right:0px;
+    margin-bottom: 0px;
+    overflow-x: hidden;
 }

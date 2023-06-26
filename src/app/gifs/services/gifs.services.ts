@@ -29,7 +29,22 @@ export class GifsService {
   private serviceUrl:string="https://api.giphy.com/v1/gifs";
 
   constructor(private http:HttpClient){
+    this.loadLocalStorage();
+    console.log(this._tagsHistory[0]);
+    if(this.tagsHistory.length===0) return;
+    this.searchTag(this._tagsHistory[0]);
+    
+  }
+  private saveLocalStorage():void{
+    localStorage.setItem("albumGifs", JSON.stringify(this.tagsHistory));/*  guardamos en el  local storage */
+  }
 
+  private loadLocalStorage():void{
+    if(!localStorage.getItem("albumGifs")){
+      return
+    }
+    this._tagsHistory=JSON.parse(localStorage.getItem("albumGifs")!);/*  este simbolo ! es not null asertion operation, osea nunca va a ser nulo */
+    
   }
 
   get tagsHistory(){
@@ -45,7 +60,9 @@ export class GifsService {
    
     this._tagsHistory.unshift(tag); /* Insertar al inicio */
     this._tagsHistory=this.tagsHistory.splice(0,10); /* Slice: recorta desde 0 hasta 10 elementos */
-  } 
+    this.saveLocalStorage();
+    
+  }   
  
   searchTag(tag:string):void{
     if (tag.length===0) return;
@@ -59,7 +76,8 @@ export class GifsService {
     this.http.get<SearchResponse>(`${this.serviceUrl}/search`, {params})
     .subscribe(resp=>{
       console.log(resp.data);
-      this.gifList=resp.data;     
+      this.gifList=resp.data;    
+       
     })
 /*     fetch("api.giphy.com/v1/gifs/search?api_key=h4Lgye6e3OQpKYCI4lwRmnAen4ClkHki&q=valorant&limit=10").then(resp=>resp.json);
  */    console.log(this.tagsHistory);
