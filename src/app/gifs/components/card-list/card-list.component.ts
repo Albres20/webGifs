@@ -6,6 +6,7 @@ import { Gif } from '../../interfaces/gif.interfaces';
   templateUrl: './card-list.component.html',
   styleUrls: ['./card-list.component.css']
 })
+
 export class CardListComponent implements OnInit {
 
   constructor() { }
@@ -16,3 +17,4 @@ export class CardListComponent implements OnInit {
   }
 
 }
+ 
