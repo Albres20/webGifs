@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { GifsService } from '../../services/gifs.services';
 
 @Component({
@@ -6,13 +6,11 @@ import { GifsService } from '../../services/gifs.services';
   templateUrl: './search-box.component.html',
   styleUrls: ['./search-box.component.css']
 })
-export class SearchBoxComponent implements OnInit {
+export class SearchBoxComponent {
 
   constructor(private gifsService:GifsService) { }
 
-  ngOnInit(): void {
-  }
-
+  
   @ViewChild('txtTagInput')
   public tagInput!:ElementRef<HTMLInputElement>;
 

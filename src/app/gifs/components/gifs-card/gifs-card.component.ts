@@ -14,7 +14,7 @@ export class GifsCardComponent implements OnInit {
   public gif!:Gif;
 
   ngOnInit(): void {
-    /* if(!this.gifs) throw new Error('Gif property is required'); */
+    if(!this.gif) throw new Error('Gif property is required'); 
   }
 
 }

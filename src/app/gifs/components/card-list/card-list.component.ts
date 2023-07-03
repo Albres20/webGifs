@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Gif } from '../../interfaces/gif.interfaces';
 
 @Component({
@@ -7,14 +7,13 @@ import { Gif } from '../../interfaces/gif.interfaces';
   styleUrls: ['./card-list.component.css']
 })
 
-export class CardListComponent implements OnInit {
+export class CardListComponent  {
 
   constructor() { }
 
   @Input()
   public gifs:Gif[]=[];
-  ngOnInit(): void {
-  }
+  
 
 }
  

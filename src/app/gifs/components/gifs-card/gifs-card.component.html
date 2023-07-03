@@ -1,14 +1,18 @@
 
     <div class="card mb-2 text-center bg-secondary">
         <!-- Imagen -->
-        <img
+        <shared-lazy-image 
+        [src]="gif.images.downsized_medium.url"
+        [alter]="gif.title  || 'No hay nombre'"
+        ></shared-lazy-image>
+        <!-- <img
         [src]="gif.images.downsized_medium.url" 
         [alt]="gif.title"
-        class="card-img-top">
+        class="card-img-top"> -->
         <!-- Texto -->
         <div class="card-body text-white">
             <p class="card-text">
-                {{gif.title}}
+                {{gif.title || 'No hay titulo'}}
             </p>
         </div>
     </div>
